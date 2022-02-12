@@ -19,56 +19,279 @@ Is the overall CMS star rating correlated with patient satisfaction?
 Can we predict a hospital overall rating from its patient satisfaction scores?
 Which survey questions are most informative of a hospital's overall quality?
 
-Filename	Year	Dataset Rows	Dataset Columns
-cmshospitalpatientsatisfaction2020.csv	2020	442587	43
-cmshospitalpatientsatisfaction2019.csv	2019	442401	43
-cmshospitalpatientsatisfaction2018.csv	2018	239650	43
-cmshospitalpatientsatisfaction2017.csv	2017	264660	43
-cmshospitalpatientsatisfaction2016.csv	2016	264385	43
+
+<table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Year</th>
+            <th>Dataset Rows</th>
+            <th>Dataset Columns</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>cms<em>hospital</em>patient<em>satisfaction</em>2020.csv</td>
+            <td>2020</td>
+            <td>442587</td>
+            <td>43</td>
+        </tr>
+        <tr>
+            <td>cms<em>hospital</em>patient<em>satisfaction</em>2019.csv</td>
+            <td>2019</td>
+            <td>442401</td>
+            <td>43</td>
+        </tr>
+        <tr>
+            <td>cms<em>hospital</em>patient<em>satisfaction</em>2018.csv</td>
+            <td>2018</td>
+            <td>239650</td>
+            <td>43</td>
+        </tr>
+        <tr>
+            <td>cms<em>hospital</em>patient<em>satisfaction</em>2017.csv</td>
+            <td>2017</td>
+            <td>264660</td>
+            <td>43</td>
+        </tr>
+        <tr>
+            <td>cms<em>hospital</em>patient<em>satisfaction</em>2016.csv</td>
+            <td>2016</td>
+            <td>264385</td>
+            <td>43</td>
+        </tr>
+    </tbody>
+</table>
+
+
 Includes the most recent Hospital General Information.csv data for each archive year found on CMS' archive site. Years: 2016-2020
 NOTE: Some Hospital Medicare IDs have leading zeroes. Be sure to read Facility ID column as a string.
+
 # Dataset columns
-Column Name	Data Type	Description
-Facility ID	Char(6)	Facility Medicare ID
-Facility Name	Char(72)	Name of the facility
-Address	Char(51)	Facility street address
-City	Char(20)	Facility City
-State	Char(2)	Facility State
-ZIP Code	Num(8)	Facility ZIP Code
-County Name	Char(25)	Facility County
-Phone Number	Char(14)	Facility Phone Number
-HCAHPS Measure ID	Char(25)	HCAHPS Patient Survey Measure Name
-HCAHPS Question	Char(138)	HCAHPS Patient Survey Question
-HCAHPS Answer Description	Char(118)	HCAHPS Patient Survey Answer
-Patient Survey Star Rating	Char(14)	Overall rating for survey item
-Patient Survey Star Rating Footnote	Char(7)	n/a
-HCAHPS Answer Percent	Char(14)	Percent of surveys with question answered
-HCAHPS Answer Percent Footnote	Char(8)	n/a
-HCAHPS Linear Mean Value	Char(14)	HCAHPS Patient Survey question linear mean value
-Number of Completed Surveys	Char(13)	Number of completed surveys for hospital. N-size.
-Number of Completed Surveys Footnote	Char(8)	n/a
-Survey Response Rate Percent	Char(13)	Hospital survey response rate.
-Survey Response Rate Percent Footnote	Char(8)	n/a
-Start Date	Date	Survey collection period start date
-End Date	Date	Survey collection period end date
-Year	Char(4)	cms data release year
-Hospital Type	Char(34)	What type of facility is it?
-Hospital Ownership	Char(43)	What type of ownership does the facility have?
-Emergency Services	Char(3))	Does the facility have emergency services Yes/No?
-Meets criteria for promoting interoperability of EHRs	Char(1)	Does facility meet government EHR standard Yes/No?
-Hospital overall rating	Char(13)	Hospital Overall Star Rating 1=Worst; 5=Best. Aggregate measure of all other measures
-Hospital overall rating footnote	Num(8)	
-Mortality national comparison	Char(28)	Facility overall performance on mortality measures compared to other facilities
-Mortality national comparison footnote	Num(8)	
-Safety of care national comparison	Char(28)	Facility overall performance on safety measures compared to other facilities
-Safety of care national comparison footnote	Num(8)	
-Readmission national comparison	Char(28)	Facility overall performance on readmission measures compared to other facilities
-Readmission national comparison footnote	Num(8)	
-Patient experience national comparison	Char(28)	Facility overall performance on pat. exp. measures compared to other facilities
-Patient experience national comparison footnote	Char(8)	
-Effectiveness of care national comparison	Char(28)	Facility overall performance on effect. of care measures compared to other facilities
-Effectiveness of care national comparison footnote	Char(8)	
-Timeliness of care national comparison	Char(28)	Facility overall performance on timeliness of care measures compared to other facilities
-Timeliness of care national comparison footnote	Char(8)	
-Efficient use of medical imaging national comparison	Char(28)	Facility overall performance on efficient use measures compared to other facilities
-Efficient use of medical imaging national comparison footnote
+
+<table>
+    <thead>
+        <tr>
+            <th>Column Name</th>
+            <th>Data Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Facility ID</td>
+            <td>Char(6)</td>
+            <td>Facility Medicare ID</td>
+        </tr>
+        <tr>
+            <td>Facility Name</td>
+            <td>Char(72)</td>
+            <td>Name of the facility</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>Char(51)</td>
+            <td>Facility street address</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>Char(20)</td>
+            <td>Facility City</td>
+        </tr>
+        <tr>
+            <td>State</td>
+            <td>Char(2)</td>
+            <td>Facility State</td>
+        </tr>
+        <tr>
+            <td>ZIP Code</td>
+            <td>Num(8)</td>
+            <td>Facility ZIP Code</td>
+        </tr>
+        <tr>
+            <td>County Name</td>
+            <td>Char(25)</td>
+            <td>Facility County</td>
+        </tr>
+        <tr>
+            <td>Phone Number</td>
+            <td>Char(14)</td>
+            <td>Facility Phone Number</td>
+        </tr>
+        <tr>
+            <td>HCAHPS Measure ID</td>
+            <td>Char(25)</td>
+            <td>HCAHPS Patient Survey Measure Name</td>
+        </tr>
+        <tr>
+            <td>HCAHPS Question</td>
+            <td>Char(138)</td>
+            <td>HCAHPS Patient Survey Question</td>
+        </tr>
+        <tr>
+            <td>HCAHPS Answer Description</td>
+            <td>Char(118)</td>
+            <td>HCAHPS Patient Survey Answer</td>
+        </tr>
+        <tr>
+            <td>Patient Survey Star Rating</td>
+            <td>Char(14)</td>
+            <td>Overall rating for survey item</td>
+        </tr>
+        <tr>
+            <td>Patient Survey Star Rating Footnote</td>
+            <td>Char(7)</td>
+            <td>n/a</td>
+        </tr>
+        <tr>
+            <td>HCAHPS Answer Percent</td>
+            <td>Char(14)</td>
+            <td>Percent of surveys with question answered</td>
+        </tr>
+        <tr>
+            <td>HCAHPS Answer Percent Footnote</td>
+            <td>Char(8)</td>
+            <td>n/a</td>
+        </tr>
+        <tr>
+            <td>HCAHPS Linear Mean Value</td>
+            <td>Char(14)</td>
+            <td>HCAHPS Patient Survey question linear mean value</td>
+        </tr>
+        <tr>
+            <td>Number of Completed Surveys</td>
+            <td>Char(13)</td>
+            <td>Number of completed surveys for hospital. N-size.</td>
+        </tr>
+        <tr>
+            <td>Number of Completed Surveys Footnote</td>
+            <td>Char(8)</td>
+            <td>n/a</td>
+        </tr>
+        <tr>
+            <td>Survey Response Rate Percent</td>
+            <td>Char(13)</td>
+            <td>Hospital survey response rate.</td>
+        </tr>
+        <tr>
+            <td>Survey Response Rate Percent Footnote</td>
+            <td>Char(8)</td>
+            <td>n/a</td>
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td>Date</td>
+            <td>Survey collection period start date</td>
+        </tr>
+        <tr>
+            <td>End Date</td>
+            <td>Date</td>
+            <td>Survey collection period end date</td>
+        </tr>
+        <tr>
+            <td>Year</td>
+            <td>Char(4)</td>
+            <td>cms data release year</td>
+        </tr>
+        <tr>
+            <td>Hospital Type</td>
+            <td>Char(34)</td>
+            <td>What type of facility is it?</td>
+        </tr>
+        <tr>
+            <td>Hospital Ownership</td>
+            <td>Char(43)</td>
+            <td>What type of ownership does the facility have?</td>
+        </tr>
+        <tr>
+            <td>Emergency Services</td>
+            <td>Char(3))</td>
+            <td>Does the facility have emergency services Yes/No?</td>
+        </tr>
+        <tr>
+            <td>Meets criteria for promoting interoperability of EHRs</td>
+            <td>Char(1)</td>
+            <td>Does facility meet government EHR standard Yes/No?</td>
+        </tr>
+        <tr>
+            <td>Hospital overall rating</td>
+            <td>Char(13)</td>
+            <td>Hospital Overall Star Rating 1=Worst; 5=Best. Aggregate measure of all other measures</td>
+        </tr>
+        <tr>
+            <td>Hospital overall rating footnote</td>
+            <td>Num(8)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Mortality national comparison</td>
+            <td>Char(28)</td>
+            <td>Facility overall performance on mortality measures compared to other facilities</td>
+        </tr>
+        <tr>
+            <td>Mortality national comparison footnote</td>
+            <td>Num(8)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Safety of care national comparison</td>
+            <td>Char(28)</td>
+            <td>Facility overall performance on safety measures compared to other facilities</td>
+        </tr>
+        <tr>
+            <td>Safety of care national comparison footnote</td>
+            <td>Num(8)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Readmission national comparison</td>
+            <td>Char(28)</td>
+            <td>Facility overall performance on readmission measures compared to other facilities</td>
+        </tr>
+        <tr>
+            <td>Readmission national comparison footnote</td>
+            <td>Num(8)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Patient experience national comparison</td>
+            <td>Char(28)</td>
+            <td>Facility overall performance on pat. exp. measures compared to other facilities</td>
+        </tr>
+        <tr>
+            <td>Patient experience national comparison footnote</td>
+            <td>Char(8)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Effectiveness of care national comparison</td>
+            <td>Char(28)</td>
+            <td>Facility overall performance on effect. of care measures compared to other facilities</td>
+        </tr>
+        <tr>
+            <td>Effectiveness of care national comparison footnote</td>
+            <td>Char(8)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Timeliness of care national comparison</td>
+            <td>Char(28)</td>
+            <td>Facility overall performance on timeliness of care measures compared to other facilities</td>
+        </tr>
+        <tr>
+            <td>Timeliness of care national comparison footnote</td>
+            <td>Char(8)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Efficient use of medical imaging national comparison</td>
+            <td>Char(28)</td>
+            <td>Facility overall performance on efficient use measures compared to other facilities</td>
+        </tr>
+        <tr>
+            <td>Efficient use of medical imaging national comparison footnote</td>
+            <td>Char(8)</td>
+            <td>n/a</td>
+        </tr>
+    </tbody>
+</table>
